@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>City Page</title>
+</head>
+ 
+<body>
+
+<h2>City Game by Allison Verhulst</h2>
+
+<form>
+    <label for="hidden">Where in the world </label>
+    <input id="hidden" type ="password" value="San Diego"> <br>
+
+    <label for="city">Guess the City</label>
+    <input id="city" type ="text"> <br>
+
+    <input type="button" onclick="checkCity()" value="Check the guess">
+</form>
+
+
+<div id="result"> </div>
+
+<script> 
+
+var oops = 0
+var found = 0
+
+function checkCity(){
+    hidden = document.getElementById("hidden").value
+    city = document.getElementById("city").value
+    
+    if(hidden == city){
+        alert("GotCha")
+        found ++
+    } else {
+        alert("Awe")
+        oops ++
+    }
+
+    document.getElementById("result").innerHTML="Oops count: " + oops + " | Found count: " + found
+   
+
+}
+</script>
+
+</body>
+</html> 
