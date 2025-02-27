@@ -18,6 +18,9 @@
     <input type="button" onclick="checkCity()" value="Check the guess">
 </form>
 
+<div>
+<img src="elk.jpg" id="petimage" width="150" height="150" onclick="updatePic()">
+</div>
 
 <div id="result"> </div>
 
@@ -25,6 +28,7 @@
 
 var oops = 0
 var found = 0
+var usePic = 1
 
 function checkCity(){
     hidden = document.getElementById("hidden").value
@@ -41,6 +45,25 @@ function checkCity(){
     document.getElementById("result").innerHTML="Oops count: " + oops + " | Found count: " + found
    
 
+}
+
+function updatePic(){
+    img = document.getElementById("petimage")
+    switch(usePic){
+        case 1: 
+            img.src = "elk.jpg" 
+            usePic = 2
+            break
+        case 2:
+            img.src = "rhino.jpg"
+            usePic = 3
+            break
+        case 3:
+            img.src = "vulture.jpg"
+            usePic = 1
+            break
+
+    }
 }
 </script>
 
