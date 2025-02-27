@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox</title>
+</head>
+ 
+<body>
+
+<h2>Allison Verhulst plans dinner</h2>
+
+<form>
+    <label for="one">Serve wine</label>
+    <input type="checkbox" id="one" value="True">
+    <label for="two">Eat Outside</label>
+    <input type="checkbox" id="two" value="True">
+    <label for="one">Light Candles</label>
+    <input type="checkbox" id="three" value="False">
+
+    <input type="button" onclick="choices()" value="Dinner Choices">
+</form>
+
+<p id="result">This text will be replaced </p>
+
+<form>
+    <label for="main">Enter main dish</label>
+    <input type="text" name="" id="main" value="Butter Chicken">
+    <label for="dessert">Enter dessert</label>
+    <input type="text" id="dessert">
+    <input type="button" value="Update the Dinner" onclick="updateDinner()">
+</form>
+<script> 
+var my_dinner
+
+function choices(){
+    my_dinner = {}
+
+    my_dinner.wine = document.getElementById("one").checked
+    my_dinner.outside = document.getElementById("two").checked
+    my_dinner.candles = document.getElementById("three").checked
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_dinner)
+
+}
+
+function updateDinner(){
+    my_dinner.main = document.getElementById("main").value;
+    my_dinner.dessert = document.getElementById("dessert").value;
+
+    document.getElementById("result").innerHTML = JSON.stringify(my_dinner);
+}
+
+</script>
+
+</body>
+</html> 
