@@ -3,5 +3,5 @@
 Introduction to Java Script and DOM
 
 Hosted by [README](https://44-563-webapps-s25.github.io/44563-webapps-s25-assignment6-verhulsta532/)
-[City](https://44-563-webapps-s25.github.io/44563-webapps-s25-assignment6-verhulsta532\city.html)
+[City](https://github.com/44-563-WebApps-S25/44563-webapps-s25-assignment6-verhulsta532/blob/main/city.html))
 
