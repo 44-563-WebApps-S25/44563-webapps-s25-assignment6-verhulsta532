@@ -20,8 +20,21 @@
 <input type="button" onclick="amounts()" value="Show total">
 <p id="results">Replace Text</p>
 
+<form>
+    <input type="radio" name="operation" id="product" value="times" onclick="chooseOp()">
+    <label for="product">Times</label></br>
+  
+    <input type="radio" name="operation" id="sum" value="add" onclick="chooseOp()">
+    <label for="sum">Add</label></br>
+  
+    <input type="radio" name="operation" id="mod" value="mod" onclick="chooseOp()">
+    <label for="mod">Mod</label></br>
+
+</form>
+  <p id="calcResult">Replace Text</p>
 
 <script> 
+
 
 function amounts() {
     var price = parseFloat(document.getElementById("basicprice").value)
@@ -45,6 +58,31 @@ function amounts() {
 
 }
 
+function chooseOp() {
+    var price = parseFloat(document.getElementById("basicprice").value);
+    var breakAt = parseInt(document.getElementById("breakAt").value);
+    var selectedOp = document.querySelector('input[name="operation"]:checked').value
+
+        var result
+        var resultText
+
+            switch (selectedOp) {
+                case "times":
+                    result = price * breakAt;
+                    resultText = `${price} * ${breakAt} is ${result}`
+                    break;
+                case "add":
+                    result = price + breakAt;
+                    resultText = `${price} + ${breakAt} is ${result}`
+                    break;
+                case "mod":
+                    result = price % breakAt;
+                    resultText = `${price} % ${breakAt} is ${result}`
+                    break;
+            }
+
+            document.getElementById("calcResult").innerHTML = resultText
+}
 
 </script>
 
