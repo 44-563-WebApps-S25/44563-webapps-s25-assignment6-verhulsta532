@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title> Getting Vaules and looping</title>
+ </head>
+<body>
+
+<h2>Allison Verhulst Message Cost</h2>
+
+<label for="basicprice">Enter cost per letter</label>
+<input type="number" id="basicprice" value="0.50">
+
+<label for="breakAt">Enter the length needed for discount</label>
+<input type="number" id="breakAt" value="9">
+
+<label for="element">Enter the discount percent</label>
+<input type="number" id="element" value="10">
+
+
+<input type="button" onclick="amounts()" value="Show total">
+<p id="results">Replace Text</p>
+
+
+<script> 
+
+function amounts() {
+    var price = parseFloat(document.getElementById("basicprice").value)
+    var breakAt = parseInt(document.getElementById("breakAt").value)
+    var discount = parseFloat(document.getElementById("element").value) / 100
+    var myResults = ""
+
+    for(var size = breakAt-3; size <= breakAt + 3; size++) {
+        var totalCost = 0
+                    if (size < breakAt) {
+                        totalCost = size * price
+                    } else {
+                        totalCost = (breakAt - 1) * price
+                        var discountedPrice = price * (1 - discount)
+                        totalCost += (size - (breakAt -1)) * discountedPrice
+                    }
+                    myResults += "size " + size + " is " + totalCost.toFixed(2) + "; "
+                }
+
+            document.getElementById("results").innerHTML = "Totals are: " + myResults;
+
+}
+
+
+</script>
+
+</body>
+</html> 
